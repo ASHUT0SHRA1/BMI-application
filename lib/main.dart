@@ -1,5 +1,7 @@
 import 'package:bmiapplication/splashScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:toggle_switch/toggle_switch.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,10 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
         color: bgColor,
         child: Center(
           child: Container(
-            width: 340,
+            width: 380,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
                 SizedBox(height: 100,),
                 Text('BMI' , style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),),
                 SizedBox(height: 20,),
@@ -82,6 +85,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   keyboardType: TextInputType.number,
                 ),
                 SizedBox(height: 20,),
+                ToggleSwitch(
+                  labels: [
+                    'Male',
+                    'Female',
+                    'Other'
+                  ],
+                  fontSize: 30,
+                  minHeight: 90,
+                  minWidth: 120,
+                  cornerRadius: 30,
+
+
+                    activeBgColors: [[Colors.blue], [Colors.pink], [Colors.purple]],
+
+                ),
+                SizedBox(
+                  height: 40,
+                ),
                 ElevatedButton(onPressed: (){
                   var wt = wtController.text.toString();
                   var ht = htController.text.toString();
